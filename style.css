@@ -1,0 +1,1387 @@
+/* ===== RESET BASE ===== */
+
+html,body {
+    font-size: 25px;
+    text-align: center;
+    background-color: rgb(197, 197, 197);
+    margin: 0;
+    font-family: 'Audiowide', sans-serif;
+}
+
+
+/* ===== BACKGROUND BASE ===== */
+html, body {
+    background-color: rgb(197, 197, 197);
+    margin: 0;
+    padding: 0;
+}
+
+/* ===== FADE IN PAGINA ===== */
+body {
+    opacity: 0;
+    transform: scale(0.98);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+body.loaded {
+    opacity: 1;
+    transform: scale(1);
+}
+
+
+@font-face {
+    font-family: 'SuperPixel';
+    src: url('fonts/SuperPixel-m2L8j.ttf') format('truetype');
+}
+
+.pixel{
+    font-family: 'SuperPixel', sans-serif;
+}
+
+
+
+/* ===== INPUT E FORM ===== */
+
+label {
+    display: block;
+    text-align: left;
+    margin-bottom: 5px;
+}
+
+select {
+    width: 50%;
+    font-size: 20px;
+}
+
+textarea{
+    font-size: 17px;
+}
+
+
+/* DEFAULT (tutti gli input tranne radio e checkbox) */
+input:not([type="radio"]):not([type="checkbox"]):not(.input-corto):not(input[type="submit"]), 
+button {
+    width: 100%;
+    padding: 10px;
+    font-size: 20px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+
+
+/* SOLO quelli corti */
+.input-corto,input[type="submit"] {
+    width: 50%;
+    padding: 10px;
+    font-size: 20px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+.input-schermo {
+    width: 10%;
+    border-radius: 10px;
+}
+
+
+
+/* ===== CONTENITORI ===== */
+
+.contenitore-tornei {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.nessun-torneo{
+    width:100%;
+    text-align:center;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+}
+
+
+/* ===== RIQUADRI ===== */
+
+.riquadro {
+    width: 500px;
+    background-color: #95a0a5;
+    margin: 30px auto;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center; /* importante */
+}
+
+
+.riquadro-home {
+    width: 300px;
+    background-color: #95a0a5;
+    padding: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.riquadro-home:hover,.riquadro-giochi:hover {
+    transform: scale(1.03);
+}
+
+
+
+
+
+/* ===== RIQUADRO INFO ===== */
+
+.riquadro-info {
+    width: 900px;
+    max-width: 95%;
+
+    margin: 20px auto; /* 🔥 meno spazio sopra */
+    padding: 25px;     /* leggermente meno padding */
+
+    background-color: #95a0a5;
+    border-radius: 15px;
+
+    box-shadow: 0 5px 20px rgba(0,0,0,0.25);
+
+    text-align: left;
+}
+
+/* immagine centrale */
+.riquadro-info img {
+    display: block;
+    margin: 0 auto 15px auto; /* meno spazio */
+    border-radius: 10px;
+}
+
+.riquadro-info img{
+    max-width: 100%;
+    height: auto;
+}
+
+/* titolo */
+.riquadro-info h1 {
+    text-align: center;
+    margin: 10px 0 15px 0; /* 🔥 ridotto */
+}
+
+/* sezioni */
+.info-sezione {
+    margin-top: 30px;
+    padding-top: 20px;
+
+    border-top: 2px solid rgba(0,0,0,0.15);
+}
+
+/* titoli sezioni */
+.info-sezione h2 {
+    margin-bottom: 15px;
+    color: #1b2838;
+}
+
+/* testo */
+.info-testo {
+    line-height: 1.7;
+    font-size: 21px;
+}
+
+
+/* regolamento */
+.regolamento-box{
+    background-color: #d6dde0;
+    border-radius: 10px;
+
+    max-width: 100%;
+    max-height: 400px;
+
+    padding: 15px;
+
+    text-align: left;
+    line-height: 1.8;
+
+    white-space: pre-line;
+    overflow-wrap: break-word;
+
+    overflow-y: auto;
+
+    margin-top: 0;
+
+    box-sizing: border-box;
+}
+
+.info-sezione h2{
+    margin-bottom: 10px;
+}
+
+
+/* ===== INFO TORNEO A DUE COLONNE ===== */
+
+.info-doppia-colonna {
+    display: flex;
+    gap: 20px;
+    align-items: stretch;
+    margin-top: 20px;
+}
+
+/* colonne */
+.info-colonna {
+    flex: 1;
+}
+
+/* responsive telefono */
+@media (max-width: 900px) {
+
+    .info-doppia-colonna {
+        flex-direction: column;
+    }
+
+}
+
+
+
+
+
+
+/* ===== CONTENITORE NOTIFICHE ===== */
+
+.contenitore-notifiche{
+    width: 80%;
+    max-width: 1000px;
+    margin: 30px auto;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* ===== CARD NOTIFICA ===== */
+
+.notifica-card{
+    background-color: #95a0a5;
+
+    border-left: 8px solid #2a475e;
+
+    padding: 20px;
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+
+    text-align: left;
+
+    box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+}
+
+.notifica-card:hover{
+    transform: scale(1.02);
+    background-color: #a5b0b5;
+}
+
+/* ===== HEADER ===== */
+
+.notifica-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 15px;
+}
+
+/* ===== TIPO ===== */
+
+.tipo-notifica{
+    font-weight: bold;
+    font-size: 22px;
+    color: #1b2838;
+}
+
+/* ===== DATA ===== */
+
+.data-notifica{
+    font-size: 16px;
+    color: #333;
+}
+
+/* ===== TESTO ===== */
+
+.messaggio-notifica{
+    font-size: 20px;
+    color: #111;
+    line-height: 1.5;
+}
+
+.notifica-non-letta{
+    border-left: 8px solid #00cc66;
+    background-color: #b8ffd6;
+}
+
+.notifica-info{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    color: #444;
+    font-size: 27px;
+
+    border-top: 1px solid rgba(0,0,0,0.1);
+    padding-top: 10px;
+    margin-top: 15px;
+}
+
+
+
+
+/* CONTENITORE LISTA */
+.contenitore-giochi {
+    display: flex;
+    flex-direction: column; /* uno sotto l'altro */
+    align-items: center;
+    gap: 20px;
+}
+
+
+
+
+/*PER LA LISTA DEI GIOCHI*/
+
+/* CARD GIOCO (layout orizzontale) */
+.riquadro-giochi {
+    width: 800px;
+    background-color: #95a0a5;
+    border-radius: 10px;
+    padding: 20px;
+
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+/* hover */
+.riquadro-giochi:hover {
+    transform: scale(1.02);
+}
+
+/* IMMAGINE */
+.riquadro-giochi img {
+    width: 200px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* CONTENUTO TESTO */
+.info-gioco {
+    text-align: left;
+    flex: 1;
+}
+
+/* TITOLO */
+.info-gioco h2 {
+    margin: 0 0 10px 0;
+}
+
+/* CATEGORIE */
+.categorie {
+    font-size: 18px;
+    color: #222;
+}
+
+/*TASTO ELIMINA*/
+.btn-elimina {
+    background-color: #c0392b;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.btn-elimina:hover {
+    background-color: #e74c3c;
+}
+
+
+
+
+
+/* ===== LISTA AMICI ORIZZONTALE ===== */
+
+.contenitore-amici{
+    width: 90%;
+    max-width: 900px;
+    margin: 30px auto;
+
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+
+/* CARD AMICO */
+.amico-card{
+    background-color: #4285a2;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 20px;
+    border-radius: 12px;
+
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+
+/* hover */
+.amico-card:hover{
+    transform: scale(1.02);
+    background-color: #1c6a91;
+}
+
+
+/* PARTE SINISTRA */
+.amico-left{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+
+/* IMMAGINE */
+.amico-left img{
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+
+/* NICKNAME */
+.amico-info h2{
+    margin: 0;
+    font-size: 28px;
+}
+
+
+/* TESTO SECONDARIO */
+.amico-info span{
+    font-size: 16px;
+    color: #222;
+}
+
+
+/* PARTE DESTRA */
+.rimuovi-right{
+    text-align: right;
+    font-size: 16px;
+}
+
+
+
+/* =======================================
+   ===== PER VISUALIZZARE UN PROFILO =====  
+   =======================================*/
+
+
+/* PROFILO UTENTE */
+
+.profilo-utente-container{
+    width: 1200px;
+    margin: 30px auto;
+}
+
+
+/* HEADER */
+
+.profilo-header{
+    background-color: #95a0a5;
+    border-radius: 15px;
+
+    padding: 30px;
+
+    text-align: center;
+
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.profilo-nickname{
+    margin-top: 0;
+    margin-bottom: 25px;
+
+    font-size: 45px;
+}
+
+.profilo-avatar-nav-bar img{
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.profilo-avatar img{
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.profilo-bandiera{
+    margin-top: 20px;
+}
+
+
+/* CONTENUTO */
+
+.profilo-contenuto{
+    display: flex;
+    gap: 25px;
+
+    margin-top: 30px;
+
+    align-items: stretch;
+}
+
+
+/* BOX */
+
+.profilo-box{
+    flex: 1;
+
+    background-color: #95a0a5;
+
+    border-radius: 15px;
+
+    padding: 30px;
+
+    text-align: left;
+
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.profilo-box h2{
+    margin-top: 0;
+
+    text-align: center;
+
+    font-size: 35px;
+}
+
+
+/* RIGHE INFO */
+
+.profilo-info-riga{
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 15px 0;
+
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+
+.profilo-label{
+    font-weight: bold;
+
+    font-size: 23px;
+}
+
+.profilo-valore{
+    font-size: 22px;
+}
+
+
+/* STATISTICHE */
+
+.profilo-stat{
+    background-color: rgba(255,255,255,0.25);
+
+    border-radius: 12px;
+
+    padding: 25px;
+
+    margin-bottom: 20px;
+
+    text-align: center;
+    
+}
+
+.profilo-stat-numero{
+    display: block;
+
+    font-size: 45px;
+
+    font-weight: bold;
+}
+
+.profilo-stat-testo{
+    font-size: 22px;
+}
+
+
+/* ===== HEADER PROFILO ===== */
+
+.profilo-header{
+    width: 700px;
+    margin: 30px auto;
+
+    background: #95a0a5;
+
+    padding: 30px;
+    border-radius: 15px;
+
+    text-align: center;
+}
+
+
+.profilo-header img{
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+
+.nickname-profilo{
+    font-size: 40px;
+    margin: 15px 0 10px;
+}
+
+
+.ruolo-profilo{
+    font-size: 20px;
+    color: #222;
+}
+
+
+
+/* ===== INFO + STATS ===== */
+
+.profilo-grid{
+    width: 900px;
+    margin: 30px auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 20px;
+}
+
+
+.profilo-box{
+    background: #95a0a5;
+
+    padding: 25px;
+    border-radius: 12px;
+
+    text-align: left;
+}
+
+
+.profilo-box h2{
+    margin-top: 0;
+    text-align: center;
+}
+
+
+/*Per il doppio elemento in una riga*/
+.stats-riga{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.stats-riga .profilo-stat{
+    margin: 0;
+}
+
+
+.stats-riga{
+    display:flex;
+    gap:20px;
+}
+
+.stats-riga .profilo-stat{
+    flex:1;
+}
+
+
+
+
+/* ===== TABELLA BASE MODERNA ===== */
+table {
+    margin: 30px auto;
+    border-collapse: collapse;
+    width: 90%;
+    max-width: 1200px;
+    font-size: 18px;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+/* HEADER */
+table thead {
+    background-color: #2a475e;
+    color: white;
+}
+
+table th {
+    padding: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* CELLE */
+table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* RIGHE */
+table tbody tr {
+    transition: 0.2s;
+}
+
+/* HOVER */
+table tbody tr:hover {
+    background-color: #f0f0f0;
+    cursor: pointer;
+}
+
+/* RIGHE ALTERNATE */
+table tbody tr:nth-child(even) {
+    background-color: #fafafa;
+}
+
+/* ULTIMA RIGA SENZA BORDO */
+table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+
+
+
+
+
+/* ===== NAVBAR ===== */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1d5f7a;
+    padding: 5px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    margin-right: 15px;
+    font-size: 26px;
+}
+
+.navbar a:hover {
+    text-decoration: underline;
+}
+
+.nav-left,
+.nav-right {
+    display: flex;
+    align-items: center;
+}
+
+.navbar span {
+    color: white;
+    margin-right: 15px;
+}
+
+
+
+
+/* ===== CHECKBOX BASE (FIX) ===== */
+
+.checkbox-item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    margin-bottom: 8px;
+    cursor: pointer;
+    text-align: left;
+}
+
+.checkbox-item input[type="checkbox"] {
+    width: auto;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+
+
+/* ===== GRIGLIA CATEGORIE (STILE STEAM) ===== */
+
+.griglia-categorie {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+/* CARD */
+.categoria-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #2a475e;
+    color: white;
+    padding: 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+    transition: 0.2s;
+    user-select: none;
+}
+
+
+.categoria-card {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+/* tooltip nascosto */
+.tooltip {
+    visibility: hidden;
+    opacity: 0;
+
+    position: absolute;
+    bottom: 120%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    background-color: #333;
+    color: #ffffff;
+    padding: 8px;
+    border-radius: 6px;
+    font-size: 20px;
+    width: 200px;
+    text-align: center;
+
+    transition: opacity 0.5s;
+    z-index: 100;
+}
+
+/* mostra tooltip al hover */
+.categoria-card:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* NASCONDE CHECKBOX */
+.categoria-card input {
+    display: none;
+}
+
+/* TESTO */
+.categoria-card span {
+    pointer-events: none;
+}
+
+/* HOVER */
+.categoria-card:hover {
+    background-color: #3b6a8a;
+}
+
+/* SELEZIONE */
+.categoria-card:has(input:checked) {
+    background-color: #1b2838;
+    border: 2px solid #00ffcc;
+    transform: scale(1.05);
+}
+
+/* TESTO SELEZIONATO */
+.categoria-card input:checked + span {
+    color: #00ffcc;
+    font-weight: bold;
+}
+
+/* CHECK ICON */
+.categoria-card input:checked + span::before {
+    content: "✔ ";
+}
+
+
+
+.amico-gia{
+    color:lightgreen;
+    font-weight:bold;
+}
+
+.rimuovi-right img {
+    transition: transform 0.2s ease;
+    cursor: pointer;
+}
+
+.rimuovi-right img:hover {
+    transform: scale(1.15);
+}
+
+
+
+
+
+/* CONFERMA/RIFIUTA AMICIZIA */
+
+.azioni {
+    display: flex;
+    gap: 20px;
+    justify-content: center; /* opzionale */
+    align-items: center;
+}
+
+.accetta, .rifiuta, .blocca, .sblocca, .sistema{
+    width: 150px;
+    height: 60px;
+    padding: 10px 15px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.2s ease;
+}
+
+
+.accetta {
+    background-color: #22c55e;
+    color: white;
+}
+
+.accetta:hover {
+    background-color: #16a34a;
+    transform: scale(1.05);
+}
+
+
+.rifiuta {
+    background-color: #ef4444;
+    color: white;
+}
+
+.rifiuta:hover {
+    background-color: #dc2626;
+    transform: scale(1.05);
+}
+
+.blocca {
+    background-color: #1e1e1e;
+    color: white;
+}
+
+.blocca:hover {
+    background-color: #000000;
+    transform: scale(1.05);
+}
+
+.sblocca {
+    background-color: #f6ff50;
+    color: rgb(0, 0, 0);
+}
+
+.sblocca:hover {
+    background-color: #f7ff0e;
+    transform: scale(1.05);
+}
+
+
+.sistema {
+    background-color: #2b7a99;
+    color: white;
+}
+
+.sistema:hover {
+    background-color: #1d5f7a;
+    transform: scale(1.05);
+}
+
+
+.accetta, .rifiuta, .blocca, .sblocca, .sistema{
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+    
+
+
+.azioni-amicizia{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:25px;
+
+    margin:20px 0;
+}
+
+
+.aggiungi-amico-btn img{
+
+    transition:0.25s;
+    cursor:pointer;
+}
+
+.aggiungi-amico-btn img:hover{
+
+    transform:scale(1.12);
+
+    filter:drop-shadow(0 0 8px #55ff88);
+}
+
+
+
+
+/* Per visualizzare le info della squadra */
+
+.info-squadra-container{
+    display:flex;
+    gap:30px;
+
+    width:95%;
+    max-width:1400px;
+
+    margin:30px auto;
+
+    align-items:flex-start;
+}
+
+.info-squadra-left{
+    flex:0 0 350px;
+
+    background:rgb(133, 152, 150);
+    border-radius:15px;
+
+    padding:25px;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+
+    height:650px;
+    box-sizing:border-box;
+}
+
+.info-squadra-right{
+    flex:1;
+
+    background:rgb(133, 152, 150);
+    border-radius:15px;
+
+    padding:25px;
+
+    height:650px;
+    box-sizing:border-box;
+
+    display:flex;
+    flex-direction:column;
+}
+
+.lista-membri{
+    flex:1;
+
+    overflow-y:auto;
+    overflow-x:hidden;
+
+    padding-right:8px;
+}
+
+.lista-membri .amico-card{
+    margin-bottom:10px;
+    padding:10px 15px;
+}
+
+.lista-membri .amico-left h2{
+    font-size:20px;
+}
+
+.titolo-membri{
+    text-align:center;
+    margin-bottom:20px;
+}
+
+.nome-squadra{
+    margin:20px 0 10px;
+    text-align:center;
+}
+
+.numero-membri{
+    margin-bottom:25px;
+    font-size:18px;
+}
+
+
+
+/*PER I PARTECIPANTI DI UN TORNEO*/
+
+.pagina-torneo{
+    width: min(1500px, 95%);
+    margin: 60px auto;
+
+    display: flex;
+    gap: 30px;
+
+    align-items: flex-start;
+    flex-wrap: nowrap; /* 🔥 fondamentale: evita rimpasti strani */
+}
+
+.pagina-torneo .riquadro-info{
+    flex: 1 1 auto;
+    min-width: 0; /* 🔥 evita overflow strani con zoom */
+}
+
+.partecipanti-box{
+    flex: 0 0 500px;
+    width: 500px;
+
+    height: 700px;              /* altezza fissa coerente */
+    max-height: 700px;         /* evita espansioni strane */
+
+    background: #d6dde0;
+    border-radius: 12px;
+
+    padding: 20px;
+    box-sizing: border-box;
+
+    position: sticky;
+    top: 20px;
+
+    display: flex;             /* 🔥 fondamentale */
+    flex-direction: column;    /* struttura verticale */
+
+    overflow: hidden;          /* 🔥 blocca fuoriuscite */
+}
+
+.partecipanti-box h2{
+    text-align:center;
+    margin-bottom:20px;
+}
+
+.lista-partecipanti{
+    flex: 1;              /* prende tutto lo spazio disponibile */
+    overflow-y: auto;     /* scrollbar verticale */
+    overflow-x: hidden;
+
+    min-height: 0;        /* 🔥 IMPORTANTISSIMO per flex overflow */
+    padding-right: 5px;
+}
+
+.partecipante-card{
+    display:flex;
+    align-items:center;
+
+    gap:15px;
+
+    padding:10px;
+
+    margin-bottom:10px;
+
+    background:white;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    transition:0.2s;
+}
+
+.partecipante-card:hover{
+    transform:scale(1.02);
+}
+
+.partecipante-card span{
+    font-size:18px;
+    font-weight:bold;
+}
+
+
+
+
+
+/* SCHEMA ALBERO TORNEO*/
+
+.bracket {
+    display: flex;
+    gap: 50px;
+}
+
+.round {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.match {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+    background: #1e2a33;
+    color: white;
+    width: 180px;
+    text-align: center;
+    border-radius: 8px;
+}
+
+
+/*Info match*/
+.match-container{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    max-width:900px;
+    margin:auto;
+    gap:50px;
+}
+
+.giocatore{
+    flex:1;
+    text-align:center;
+}
+
+.giocatore img{
+    border-radius:50%;
+    height: 250;
+    width: 250;
+    object-fit: cover;
+}
+
+.vs{
+    font-size:40px;
+    font-weight:bold;
+}
+
+
+
+/*Grafica Reclami*/
+
+.chat-container{
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* BUBBLE FORZATA */
+.bubble{
+    width: fit-content;
+    max-width: 70%;
+    padding: 12px 14px;
+    border-radius: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* SINISTRA */
+.bubble-left{
+    align-self: flex-start !important;
+    background: #f1f1f1;
+}
+
+/* DESTRA */
+.bubble-right{
+    align-self: flex-end !important;
+    background: #d7f8d1;
+}
+
+/* HEADER UTENTE */
+.user{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.user img{
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* contenuto reclamo */
+.reclamo-img img{
+    width: 100%;
+    max-width: 350px;
+    border-radius: 10px;
+}
+
+.descrizione{
+    font-size: 20px;
+}
+
+
+
+/*Grafica campione*/
+.winner-column{
+    display:flex;
+    justify-content:center;
+}
+
+.winner-box{
+
+    width:220px;
+
+    min-height:180px;
+
+    border:3px solid gold;
+
+    border-radius:12px;
+
+    background:#00aad0;
+
+    text-align:center;
+
+    padding:20px;
+
+    box-shadow:0 0 15px gold;
+}
+
+.winner-box img{
+
+    width:90px;
+    height:90px;
+
+    border-radius:50%;
+    object-fit:cover;
+
+    border:3px solid gold;
+}
+
+.winner-placeholder{
+
+    margin-top:40px;
+
+    opacity:.6;
+
+    font-style:italic;
+}
