@@ -45,7 +45,7 @@ if (isset($_SESSION["LOGGED"]) && $_SESSION["LOGGED"] === true) {
     <input type = "submit" name = "submit_form" value = "LOGIN">
     <br>
     
-    <a href = "Registrazione.php" > Non hai un account? </a><br><br>
+    <a href = "registrazione.php" > Non hai un account? </a><br><br>
 
 </div>
     
