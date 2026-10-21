@@ -45,8 +45,8 @@ if (
     exit("Pagina non trovata");
 }
 
-// Mantiene i percorsi relativi usati dal progetto
-chdir($root);
+// Imposta la cartella di lavoro in base alla pagina richiesta
+chdir(dirname($file));
 
 // Esegue la pagina PHP
 require $file;
