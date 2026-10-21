@@ -20,7 +20,7 @@ if (!isset($base_url)) {
             if($_SESSION["id_ruolo"] == 2 || $_SESSION["id_ruolo"] == 3){
 
             ?>
-                <a href="<?php echo $base_url; ?>file_admin/lista_utenti.php">Lista utenti</a>
+                <a href="<?php echo $base_url; ?>file_admin/Lista_utenti.php">Lista utenti</a>
                 <a href="<?php echo $base_url; ?>file_admin/gestione_tornei.php">Tornei</a>
             <?php
 
