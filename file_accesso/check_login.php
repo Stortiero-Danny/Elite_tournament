@@ -1,45 +1,45 @@
 <?php
+
 session_start();
-include "connessione.php";
-include "../funzioni.php";
-include "../footer.php";
 
-$base_url = "../";
-include "../navbar.php";
+require_once __DIR__ . "/connessione.php";
+require_once __DIR__ . "/../funzioni.php";
 
-/* blocca accesso diretto */
-if (!isset($_POST['submit_form'])) {
+// Blocca l'accesso diretto
+if ($_SERVER["REQUEST_METHOD"] !== "POST" ||
+    !isset($_POST["submit_form"])) {
+
     header("Location: login.php");
     exit();
 }
-?>
 
-<!DOCTYPE html>
+$email = $_POST["email"] ?? "";
+$password = md5($_POST["password"] ?? "");
 
-<head>
-    <link href="../style.css" rel = "stylesheet">
-</head>
-<body>
+// Query preparata
+$sql = "SELECT id, nome, cognome, nickname, email,
+               data_nascita, id_sesso, id_nazione,
+               avatar, id_ruolo
+        FROM utenti
+        WHERE email = ? AND password = ?";
 
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("ss", $email, $password);
+$stmt->execute();
 
-<?php
-
-$email = $_POST["email"];
-$password = md5($_POST["password"]);
-
-$sql = "SELECT id, nome, cognome, nickname, email, data_nascita, id_sesso, id_nazione, avatar, id_ruolo FROM utenti 
-        WHERE email = '$email' AND password = '$password'";
-
-$result = mysqli_query($conn, $sql);
+$result = $stmt->get_result();
 
 $accesso_riuscito = false;
-$utente = null;
 
-if (mysqli_num_rows($result) == 1) {
+if ($result && $result->num_rows === 1) {
 
-    $utente = mysqli_fetch_assoc($result);
+    $utente = $result->fetch_assoc();
+
+    // Rigenera l'ID della sessione dopo il login
+    session_regenerate_id(true);
+
     $_SESSION["LOGGED"] = true;
-    $_SESSION['last_activity'] = time();//inizializza l'orario
+    $_SESSION["last_activity"] = time();
 
     $_SESSION["id"] = $utente["id"];
     $_SESSION["nickname"] = $utente["nickname"];
@@ -54,22 +54,46 @@ if (mysqli_num_rows($result) == 1) {
 
     $accesso_riuscito = true;
 
+    $stmt->close();
 
-    header("location: ../home.php");
+    // Reindirizzamento prima di qualsiasi output HTML
+    header("Location: ../home.php");
     exit();
-
-} else {
-    $_SESSION["LOGGED"] = false;
-
-    echo "<h1> Accesso negato </h1>";
-    echo "<h2> Email o password non corretti. </h2>";
-    echo '<a href="login.php">Torna al login</a>';
-
-
-    echo "<br><br>";
-    insert_immagine_reazione("../img_errore/");
-    
 }
+
+$stmt->close();
+
+$_SESSION["LOGGED"] = false;
+
+?>
+
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Accesso negato</title>
+    <link href="../style.css" rel="stylesheet">
+</head>
+
+<body>
+
+<?php
+
+$base_url = "../";
+include "../navbar.php";
+
+?>
+
+<h1>Accesso negato</h1>
+<h2>Email o password non corretti.</h2>
+
+<a href="login.php">Torna al login</a>
+
+<br><br>
+
+<?php
+insert_immagine_reazione("../img_errore/");
+include "../footer.php";
 ?>
 
 </body>
