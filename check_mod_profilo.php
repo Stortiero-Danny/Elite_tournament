@@ -1,8 +1,7 @@
 <?php
 session_start();
-include "file_accesso/connessione.php";
-include "funzioni.php";
-include "footer.php";
+require_once __DIR__ . "file_accesso/connessione.php";
+require_once __DIR__ . "funzioni.php";
 
 $base_url = "";
 include "navbar.php";
@@ -22,7 +21,7 @@ if (!isset($_POST['submit_form'])) {
 <body>
 
     <?php
-
+include "footer.php";
 
 /* DATI UTENTE */
 $id = $_SESSION["id"];
