@@ -1,21 +1,9 @@
 <?php
 
-header("Content-Type: text/plain; charset=utf-8");
+// Imposta la cartella principale del progetto
+chdir(dirname(__DIR__));
 
-// Carica la connessione MySQL
-require_once __DIR__ . "/../file_accesso/connessione.php";
-
-// Esegue una semplice query
-$result = mysqli_query($conn, "SELECT COUNT(*) AS totale FROM giochi");
-
-if (!$result) {
-    http_response_code(500);
-    exit("Errore durante la lettura dei giochi.");
-}
-
-$row = mysqli_fetch_assoc($result);
-
-echo "Elite Tournament - Connessione Aiven riuscita!\n";
-echo "Giochi presenti nel database: " . $row["totale"];
+// Carica la vera Home di Elite Tournament
+require dirname(__DIR__) . "/home.php";
 
 ?>
