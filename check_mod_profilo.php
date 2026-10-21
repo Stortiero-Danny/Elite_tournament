@@ -1,27 +1,21 @@
 <?php
 session_start();
-require_once __DIR__ . "file_accesso/connessione.php";
-require_once __DIR__ . "funzioni.php";
-
-$base_url = "";
-include "navbar.php";
+require_once __DIR__ . "/file_accesso/connessione.php";
+require_once __DIR__ . "/funzioni.php";
 
 /* blocca accesso diretto */
-if (!isset($_POST['submit_form'])) {
+if ($_SERVER["REQUEST_METHOD"] !== "POST" ||
+    !isset($_POST["submit_form"])) {
+
     header("Location: profilo.php");
     exit();
 }
 
-?>
-
-<!DOCTYPE html>
-<head>
-    <link href="style.css" rel = "stylesheet">
-</head>
-<body>
-
-    <?php
-include "footer.php";
+// Verifica che l'utente sia autenticato
+if (empty($_SESSION["LOGGED"]) || !isset($_SESSION["id"])) {
+    header("Location: file_accesso/login.php");
+    exit();
+}
 
 /* DATI UTENTE */
 $id = $_SESSION["id"];
@@ -160,12 +154,29 @@ if ($stmt->execute()) {
     exit();
 
 } else {
+
+?>
+
+<!DOCTYPE html>
+<head>
+    <link href="style.css" rel = "stylesheet">
+</head>
+<body>
+
+
+<?php
+
+    $base_url = "";
+    include "navbar.php";
+
     echo "<h2>Errore: " . $stmt->error . "</h2>";
     echo "<a href='mod_profilo.php'>Riprova</a>";
 
     echo "<br><br>";
-    insert_immagine_reazione("../img_errore/");
+    insert_immagine_reazione("img_errore/");
 }
+
+include "footer.php";
 ?>
 
 </body>
