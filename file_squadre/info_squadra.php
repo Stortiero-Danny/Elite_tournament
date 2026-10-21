@@ -81,6 +81,7 @@ $sql = "SELECT nome, logo_squadra FROM squadre
         WHERE id =" . $id_squadra;
 $result = mysqli_query($conn, $sql);
 
+
 ?>
 
 <br>
@@ -99,7 +100,7 @@ if($_SESSION["from"] == "richieste"){
 
     ?><button class = "input-schermo" onclick="window.location.href='../info_torneo.php?from=<?php echo $_SESSION['from'] ?>&id=<?php echo $_SESSION['id_torneo'] ?>'"> indietro </button><?php
 
-}elseif($_SESSION["from"] == "lista_utenti" || $_SESSION["from"] == "tornei_gioco_utente"){
+}elseif($_SESSION["from"] == "lista_utenti" || $_SESSION["from"] == "tornei_gioco_utente" || $_SESSION["from"] == "profilo-amici"){
 
     ?><button class = "input-schermo" onclick="window.location.href='visualizza_squadre.php?from=<?php echo $_SESSION['from'] ?>&id=<?php echo $_SESSION['id_utente'] ?>&nickname_utente=<?php echo $_SESSION['nickname_utente'] ?>'"> indietro </button><?php
 
