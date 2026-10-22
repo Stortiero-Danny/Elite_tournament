@@ -1,9 +1,8 @@
 <?php
 session_start();
 
-include "file_accesso/connessione.php";
-include "funzioni.php";
-include "footer.php";
+require_once __DIR__ . "/file_accesso/connessione.php";
+require_once __DIR__ . "/funzioni.php";
 
 
 /* =========================
@@ -153,6 +152,7 @@ if (isset($_POST["avvia_torneo"])) {
 
 <?php
 include "navbar.php";
+include "footer.php";
 
 scheduler_checkin($conn);
 
