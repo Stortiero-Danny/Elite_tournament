@@ -126,6 +126,6 @@ if (!empty($categorie)) {
    REDIRECT FINALE
 ========================= */
 
-header("Location: ../Lista_giochi.php");
+header("Location: ../lista_giochi.php");
 exit();
 ?>

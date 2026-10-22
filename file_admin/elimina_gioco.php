@@ -46,7 +46,7 @@ $stmt = $conn->prepare("DELETE FROM giochi WHERE id = ?");
 $stmt->bind_param("i", $id_gioco);
 
 if ($stmt->execute()) {
-    header("Location: ../Lista_giochi.php");
+    header("Location: ../lista_giochi.php");
     exit();
 } else {
     echo "Errore eliminazione";

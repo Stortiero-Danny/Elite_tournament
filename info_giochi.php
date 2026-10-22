@@ -84,7 +84,7 @@ if($result && mysqli_num_rows($result) > 0){
 </table>
 
 <br><br>
-<button class = "input-schermo" onclick="window.location.href='Lista_giochi.php'"> Indietro </button><br>
+<button class = "input-schermo" onclick="window.location.href='lista_giochi.php'"> Indietro </button><br>
 
 </body>
 </html>
