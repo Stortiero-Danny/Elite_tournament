@@ -15,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] !== "POST" ||
 
 // Verifica che l'utente sia autenticato
 if (empty($_SESSION["LOGGED"]) || !isset($_SESSION["id"])) {
-    header("Location: file_accesso/login.php");
+    header("Location: ../file_accesso/login.php");
     exit();
 }
 
