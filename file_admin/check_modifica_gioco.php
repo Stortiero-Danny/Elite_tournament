@@ -7,9 +7,9 @@ require_once __DIR__ . "/../funzioni.php";
 
 /* blocca accesso diretto */
 if ($_SERVER["REQUEST_METHOD"] !== "POST" ||
-    !isset($_POST["submit"])) {
+    !isset($_POST["submit_form"])) {
 
-    header("Location: ../home.php");
+    header("Location: ../lista_giochi.php");
     exit();
 }
 
