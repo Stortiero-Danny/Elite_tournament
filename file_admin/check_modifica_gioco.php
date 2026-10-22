@@ -1,8 +1,8 @@
 <?php
 session_start();
 
-require_once __DIR__ . "../file_accesso/connessione.php";
-require_once __DIR__ . "../funzioni.php";
+require_once __DIR__ . "/../file_accesso/connessione.php";
+require_once __DIR__ . "/../funzioni.php";
 
 
 /* blocca accesso diretto */
@@ -132,12 +132,6 @@ if (!empty($categorie)) {
         $stmt_ins->execute();
     }
 }
-
-
-$base_url = "../";
-include "../navbar.php";
-
-include "../footer.php";
 
 /* =========================
    REDIRECT FINALE
