@@ -9,7 +9,7 @@ require_once __DIR__ . "/../funzioni.php";
 if ($_SERVER["REQUEST_METHOD"] !== "POST" ||
     !isset($_POST["submit_form"])) {
 
-    header("Location: lista_giochi.php");
+    header("Location: ../lista_giochi.php");
     exit();
 }
 
