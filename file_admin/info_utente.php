@@ -1,9 +1,8 @@
 <?php
 session_start();
 
-include "../file_accesso/connessione.php";
-include "../funzioni.php";
-include "../footer.php";
+require_once __DIR__ . "/../file_accesso/connessione.php";
+require_once __DIR__ . "/../funzioni.php";
 
 ?>
 
@@ -18,9 +17,6 @@ include "../footer.php";
 <body>
 
 <?php
-
-$base_url = "../";
-include "../navbar.php";
 
 
 /* =========================
@@ -262,6 +258,14 @@ $user = $result->fetch_assoc();
 if (!$user) {
     die("Utente inesistente");
 }
+
+
+
+
+include "../footer.php";
+
+$base_url = "../";
+include "../navbar.php";
 
 ?>
 
