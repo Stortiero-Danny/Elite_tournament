@@ -1,12 +1,23 @@
 <?php
 session_start();
 
-include "../file_accesso/connessione.php";
-include "../funzioni.php";
-include "../footer.php";
+require_once __DIR__ . "../file_accesso/connessione.php";
+require_once __DIR__ . "../funzioni.php";
 
-$base_url = "../";
-include "../navbar.php";
+
+/* blocca accesso diretto */
+if ($_SERVER["REQUEST_METHOD"] !== "POST" ||
+    !isset($_POST["submit_form"])) {
+
+    header("Location: lista_giochi.php");
+    exit();
+}
+
+// Verifica che l'utente sia autenticato
+if (empty($_SESSION["LOGGED"]) || !isset($_SESSION["id"])) {
+    header("Location: file_accesso/login.php");
+    exit();
+}
 
 /* =========================
    CONTROLLI BASE
@@ -121,6 +132,12 @@ if (!empty($categorie)) {
         $stmt_ins->execute();
     }
 }
+
+
+$base_url = "../";
+include "../navbar.php";
+
+include "../footer.php";
 
 /* =========================
    REDIRECT FINALE

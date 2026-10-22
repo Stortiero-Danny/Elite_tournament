@@ -24,7 +24,7 @@ $result = mysqli_query($conn, $sql);
 
 <h1>Modifica Gioco</h1>
 
-<button class = "input-schermo" onclick="window.location.href='../Lista_giochi.php'"> Indietro </button>
+<button class = "input-schermo" onclick="window.location.href='../lista_giochi.php'"> Indietro </button>
 
 <div class="riquadro">
 
