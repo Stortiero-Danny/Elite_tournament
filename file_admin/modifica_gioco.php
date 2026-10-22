@@ -94,7 +94,7 @@ if ($result_sel) {
 
 <br><br>
 
-<input type="submit" value="Salva modifiche">
+<input type="submit" name = "submit_form" value="Salva modifiche">
 
 </form>
 
