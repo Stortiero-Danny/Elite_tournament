@@ -4,6 +4,7 @@ session_start();
 require_once __DIR__ . "/../file_accesso/connessione.php";
 require_once __DIR__ . "/../funzioni.php";
 
+
 ?>
 
 <!DOCTYPE html>
@@ -17,6 +18,9 @@ require_once __DIR__ . "/../funzioni.php";
 <body>
 
 <?php
+
+$base_url = "../";
+include "../navbar.php";
 
 
 /* =========================
@@ -258,14 +262,6 @@ $user = $result->fetch_assoc();
 if (!$user) {
     die("Utente inesistente");
 }
-
-
-
-
-include "../footer.php";
-
-$base_url = "../";
-include "../navbar.php";
 
 ?>
 
@@ -694,6 +690,8 @@ onclick="window.location.href='../info_torneo.php?from=<?php echo $from; ?>&id=<
 
 <?php
 }
+
+include "../footer.php";
 
 ?>
 
