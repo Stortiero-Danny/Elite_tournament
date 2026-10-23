@@ -3,7 +3,6 @@ session_start();
 
 include "../file_accesso/connessione.php";
 include "../funzioni.php";
-include "../footer.php";
 
 
 if(isset($_POST["rimuovi"])){
@@ -81,6 +80,7 @@ $sql = "SELECT nome, logo_squadra FROM squadre
         WHERE id =" . $id_squadra;
 $result = mysqli_query($conn, $sql);
 
+echo $_SESSION["from"];
 
 ?>
 
@@ -271,7 +271,7 @@ if($result && mysqli_num_rows($result) > 0){
     echo "<h1 Style = 'color:red' >Squadra non trovata</h1>";
 }
 
-
+include "../footer.php";
 ?>
 
 </body>
