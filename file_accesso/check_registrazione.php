@@ -93,36 +93,50 @@ $stmt->bind_param(
     $percorsoAvatar
 );
 
-?>
+// Esecuzione INSERT prima di qualsiasi HTML
+try {
 
-<!DOCTYPE html>
-<head>
-    <link href="../style.css" rel = "stylesheet">
-</head>
-<body>
+    $registrazione_riuscita = $stmt->execute();
 
-<?php
+} catch (mysqli_sql_exception $e) {
 
-$base_url = "../";
-include "../navbar.php";
+    error_log("Errore registrazione: " . $e->getMessage());
+    $registrazione_riuscita = false;
+}
 
-if ($stmt->execute()) {
+$stmt->close();
+
+if ($registrazione_riuscita) {
 
     header("Location: ../esito_operazione.php?from=registrazione");
     exit();
-
-} else {
-    echo "<p>Errore: " . $stmt->error . "</p>";
-    echo "<h2><a href='registrazione.php'> Riprova </a></h2>";
-
-    echo "<br><br>";
-    insert_immagine_reazione("../img_errore/");
 }
 
-
-include "../footer.php";
+http_response_code(500);
 
 ?>
+
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <link href="../style.css" rel="stylesheet">
+    <title>Errore registrazione</title>
+</head>
+
+<body>
+
+<?php
+$base_url = "../";
+include __DIR__ . "/../navbar.php";
+?>
+
+<h2>Errore durante la registrazione.</h2>
+
+<a href="registrazione.php">Riprova</a>
+
+<?php include __DIR__ . "/../footer.php"; ?>
 
 </body>
 </html>
