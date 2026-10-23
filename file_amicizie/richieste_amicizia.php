@@ -3,7 +3,6 @@ session_start();
 
 include "../file_accesso/connessione.php";
 include "../funzioni.php";
-include "../footer.php";
 
 
 if (isset($_POST["accetta"])) {
@@ -232,6 +231,11 @@ if ($result && $result->num_rows > 0) {
 ?>
 
 </div>
+
+
+<?php
+include "../footer.php";
+?>
 
 </body>
 </html>
