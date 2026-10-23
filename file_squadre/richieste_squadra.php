@@ -1,9 +1,8 @@
 <?php
 session_start();
 
-include "../file_accesso/connessione.php";
-include "../funzioni.php";
-include "../footer.php";
+require_once __DIR__ . "/../file_accesso/connessione.php";
+require_once __DIR__ . "/../funzioni.php";
 
 
 if (isset($_POST["accetta"])) {
@@ -260,6 +259,10 @@ if ($result && $result->num_rows > 0) {
 ?>
 
 </div>
+
+<?php
+include "../footer.php";
+?>
 
 </body>
 </html>
