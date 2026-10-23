@@ -4,6 +4,13 @@ session_start();
 require_once __DIR__ . "/../file_accesso/connessione.php";
 require_once __DIR__ . "/../funzioni.php";
 
+/* blocca accesso diretto */
+if (!isset($_POST['submit_form'])) {
+    header("Location: ../home.php");
+    exit();
+}
+
+
 ?>
 
 <!DOCTYPE html>
@@ -22,13 +29,6 @@ require_once __DIR__ . "/../funzioni.php";
 
 $base_url = "../";
 include "../navbar.php";
-
-
-/* blocca accesso diretto */
-if (!isset($_POST['submit_form'])) {
-    header("Location: ../home.php");
-    exit();
-}
 
     $id_utente = $_SESSION["id"];
     $nome = $_POST["nome"];
