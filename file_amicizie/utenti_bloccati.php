@@ -135,6 +135,9 @@ if ($result && $result->num_rows > 0) {
     </form>
     </div>
 
+</div>
+    
+
 <?php
     }
 }else{
