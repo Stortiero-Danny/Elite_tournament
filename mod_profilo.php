@@ -25,7 +25,12 @@ include "navbar.php";
 
 <label>Avatar</label>
 <?php Insert_immagine2($_SESSION["avatar"], "", 250); ?><br>
-<input type="file" name="avatar" accept="image/*">
+<input type="file" name="avatar" accept="image/*" disabled>
+
+<p class="funzione-sospesa">
+    ⚠ Caricamento immagini temporaneamente non disponibile.
+    La funzionalità verrà ripristinata con un prossimo aggiornamento.
+</p>
 
 <br>
 

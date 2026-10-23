@@ -119,7 +119,15 @@ if ($result && mysqli_num_rows($result) > 0) {
 
 <!-- AVATAR -->
 <label>Avatar (facoltativo)</label>
-<input type="file" name="avatar" accept="image/*">
+<input type="file"
+       name="avatar"
+       accept="image/*"
+       disabled>
+
+<p class="funzione-sospesa">
+    ⚠ Caricamento immagini temporaneamente non disponibile.
+    La funzionalità verrà ripristinata con un prossimo aggiornamento.
+</p>
 
 <br><br>
 

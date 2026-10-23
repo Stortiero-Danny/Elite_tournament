@@ -1385,3 +1385,10 @@ table tbody tr:last-child td {
 
     font-style:italic;
 }
+
+
+.funzione-sospesa {
+    color: #ffb347;
+    font-size: 14px;
+    margin-top: 8px;
+}

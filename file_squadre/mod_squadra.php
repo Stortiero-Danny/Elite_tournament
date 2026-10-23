@@ -64,7 +64,12 @@ if($result && mysqli_num_rows($result) > 0){
 
 <label> Logo Squadra</label>
 <?php Insert_logo_squadra($row["logo_squadra"], "", 250);?>
-<input type = "file" name="logo" accept="image/*">
+<input type = "file" name="logo" accept="image/*" disabled>
+
+<p class="funzione-sospesa">
+    ⚠ Caricamento immagini temporaneamente non disponibile.
+    La funzionalità verrà ripristinata con un prossimo aggiornamento.
+</p>
 
 <br><br>
 

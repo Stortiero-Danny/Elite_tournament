@@ -54,10 +54,12 @@ if ($res_email->num_rows > 0) {
 }
 
 /* =========================
-   UPLOAD IMMAGINE
+   UPLOAD IMMAGINE  (SOSPESO)
    ========================= */
 
 $percorsoAvatar = NULL;
+
+/*
 
 if (isset($_FILES['avatar']) && $_FILES['avatar']['error'] === 0) {
 
@@ -73,6 +75,8 @@ if (isset($_FILES['avatar']) && $_FILES['avatar']['error'] === 0) {
     // salva percorso nel DB
     $percorsoAvatar = $destinazione;
 }
+
+*/
 
 /* =========================
    INSERT CON PREPARED
