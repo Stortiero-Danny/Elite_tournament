@@ -3,7 +3,6 @@ session_start();
 
 include "../file_accesso/connessione.php";
 include "../funzioni.php";
-include "../footer.php";
 
 ?>
 
@@ -37,8 +36,9 @@ include "../navbar.php";
 
 <br>
 
-
-
+<?php
+include "../footer.php";
+?>
 
 </body>
 </html>

@@ -3,7 +3,6 @@ session_start();
 
 include "../file_accesso/connessione.php";
 include "../funzioni.php";
-include "../footer.php";
 
 
 if(isset($_POST["annulla_invito"])) {
@@ -134,6 +133,10 @@ include "../navbar.php";
 ========================= -->
 
 <div id="risultati" class="contenitore-amici"></div>
+
+<?php
+include "../footer.php";
+?>
 
 <script>
 
