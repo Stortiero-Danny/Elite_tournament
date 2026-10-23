@@ -19,9 +19,6 @@ require_once __DIR__ . "/../funzioni.php";
 
 <?php
 
-$base_url = "../";
-include "../navbar.php";
-
 
 /* =========================
    CONTROLLO LOGIN
@@ -222,6 +219,9 @@ if (isset($_POST['cambia_ruolo'])) {
     header("Location: info_utente.php?id=" . $id_utente);
     exit();
 }
+
+$base_url = "../";
+include "../navbar.php";
 
 
 /* =========================
