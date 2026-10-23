@@ -5,21 +5,6 @@ require_once __DIR__ . "/../file_accesso/connessione.php";
 require_once __DIR__ . "/../funzioni.php";
 
 
-?>
-
-<!DOCTYPE html>
-<html>
-
-<head>
-    <link href="../style.css" rel="stylesheet">
-    <title>Info utente</title>
-</head>
-
-<body>
-
-<?php
-
-
 /* =========================
    CONTROLLO LOGIN
 ========================= */
@@ -219,6 +204,20 @@ if (isset($_POST['cambia_ruolo'])) {
     header("Location: info_utente.php?id=" . $id_utente);
     exit();
 }
+
+?>
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="../style.css" rel="stylesheet">
+    <title>Info utente</title>
+</head>
+
+<body>
+
+<?php
 
 $base_url = "../";
 include "../navbar.php";
