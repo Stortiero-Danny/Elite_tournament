@@ -1,9 +1,8 @@
 <?php
 session_start();
 
-include "../file_accesso/connessione.php";
-include "../funzioni.php";
-include "../footer.php";
+require_once __DIR__ . "/../file_accesso/connessione.php";
+require_once __DIR__ . "/../funzioni.php";
 
 
 if(isset($_POST["abbandona"])){
@@ -263,6 +262,10 @@ if($result && mysqli_num_rows($result) > 0){
 ?>
 
 </div><!-- contenitore amici -->
+
+<?php
+include "../footer.php";
+?>
 
 </body>
 </html>
