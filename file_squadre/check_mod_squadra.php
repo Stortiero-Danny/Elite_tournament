@@ -1,9 +1,8 @@
 <?php
 session_start();
 
-include "../file_accesso/connessione.php";
-include "../funzioni.php";
-include "../footer.php";
+require_once __DIR__ . "/../file_accesso/connessione.php";
+require_once __DIR__ . "/../funzioni.php";
 
 /* controllo accesso */
 if (!isset($_POST["id"])) {
