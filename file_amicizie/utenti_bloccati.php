@@ -94,7 +94,7 @@ if ($result && $result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
 
         ?>
-         <div class="amico-card" onclick="window.location.href='file_admin/info_utente.php?id=<?php echo $row['utente_bloccato']; ?>&from=utente_bloccato'">
+         <div class="amico-card" onclick="window.location.href='../file_admin/info_utente.php?id=<?php echo $row['utente_bloccato']; ?>&from=utente_bloccato'">
             
          <div class="amico-left">
 
