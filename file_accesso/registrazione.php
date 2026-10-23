@@ -1,7 +1,6 @@
 <?php
-include "connessione.php";
-include "../funzioni.php";
-include "../footer.php";
+require_once __DIR__ . "/connessione.php";
+require_once __DIR__ . "/../funzioni.php";
 ?>
 
 <!DOCTYPE html>
@@ -137,8 +136,9 @@ if ($result && mysqli_num_rows($result) > 0) {
 </form>
 </div>
 
-
-
+<?php
+include "../footer.php";
+?>
 
 <script>
 
