@@ -1,28 +1,15 @@
 <?php
 session_start();
-include "connessione.php";
-include "../funzioni.php";
-include "../footer.php";
+require_once __DIR__ . "/connessione.php";
+require_once __DIR__ . "/../funzioni.php";
 
-?>
-
-
-<!DOCTYPE html>
-<head>
-    <link href="../style.css" rel = "stylesheet">
-</head>
-<body>
-
-<?php
-
-$base_url = "../";
-include "../navbar.php";
 
 /* blocca accesso diretto */
 if (!isset($_POST['submit_form'])) {
     header("Location: registrazione.php");
     exit();
 }
+
 
 // DATI
 $nickname = $_POST['nickname'];
@@ -106,6 +93,18 @@ $stmt->bind_param(
     $percorsoAvatar
 );
 
+?>
+
+<!DOCTYPE html>
+<head>
+    <link href="../style.css" rel = "stylesheet">
+</head>
+<body>
+
+<?php
+
+$base_url = "../";
+include "../navbar.php";
 
 if ($stmt->execute()) {
 
@@ -119,6 +118,9 @@ if ($stmt->execute()) {
     echo "<br><br>";
     insert_immagine_reazione("../img_errore/");
 }
+
+
+include "../footer.php";
 
 ?>
 

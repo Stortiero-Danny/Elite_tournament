@@ -1,11 +1,9 @@
 <?php
 session_start();
-include "../file_accesso/connessione.php";
-include "../funzioni.php";
-include "../footer.php";
+require_once __DIR__ . "/../file_accesso/connessione.php";
+require_once __DIR__ . "/../funzioni.php";
 
-$base_url = "../";
-include "../navbar.php";
+
 ?>
 
 <!DOCTYPE html>
@@ -16,6 +14,9 @@ include "../navbar.php";
 <body>
 
 <?php
+
+$base_url = "../";
+include "../navbar.php";
 
 $nome_gioco = trim($_POST["nome_gioco"]);
 $categorie = $_POST["categorie"] ?? [];
@@ -80,6 +81,8 @@ if ($stmt->execute()) {
     echo "<br><br>";
     insert_immagine_reazione("../img_errore/");
 }
+
+include "../footer.php";
 
 ?>
 
