@@ -57,6 +57,8 @@ include "../navbar.php";
 
 $id_utente = $_SESSION["id"];
 
+$_SESSION["from"] = "utente_bloccato";
+
 $sql = "SELECT utente_bloccato, data_blocco, u.avatar, u.nickname FROM utenti_bloccati ub INNER JOIN utenti u ON ub.utente_bloccato = u.id  
         WHERE utente_che_blocca = ?";
 
