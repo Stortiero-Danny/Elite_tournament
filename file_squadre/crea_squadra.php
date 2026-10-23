@@ -48,7 +48,12 @@ include "../navbar.php";
 <br><br>
 
 <label> Logo Squadra (Facoltativo) </label>
-<input type = "file" name="logo" accept="image/*">
+<input type = "file" name="logo" accept="image/*" disabled>
+
+<p class="funzione-sospesa">
+    ⚠ Caricamento immagini temporaneamente non disponibile.
+    La funzionalità verrà ripristinata con un prossimo aggiornamento.
+</p>
 
 <br><br>
 
