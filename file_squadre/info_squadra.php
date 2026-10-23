@@ -80,8 +80,6 @@ $sql = "SELECT nome, logo_squadra FROM squadre
         WHERE id =" . $id_squadra;
 $result = mysqli_query($conn, $sql);
 
-echo $_SESSION["from"];
-
 ?>
 
 <br>

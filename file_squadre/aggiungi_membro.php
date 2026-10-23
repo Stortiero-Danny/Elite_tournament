@@ -105,8 +105,6 @@ if(isset($_POST["aggiungi"])) {
 
 $base_url = "../";
 include "../navbar.php";
-
-echo $_SESSION["from"];
 ?>
 
 
