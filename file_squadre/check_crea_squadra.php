@@ -10,26 +10,6 @@ if (!isset($_POST['submit_form'])) {
     exit();
 }
 
-
-?>
-
-<!DOCTYPE html>
-<html>
-
-<head>
-    <link href="../style.css" rel="stylesheet">
-
-    <style>
-    </style>
-</head>
-
-<body>
-
-<?php
-
-$base_url = "../";
-include "../navbar.php";
-
     $id_utente = $_SESSION["id"];
     $nome = $_POST["nome"];
 
@@ -112,6 +92,28 @@ if ($stmt->execute()) {
     exit();
 
     }else{
+
+
+    ?>
+
+    <!DOCTYPE html>
+<html>
+
+<head>
+    <link href="../style.css" rel="stylesheet">
+
+    <style>
+    </style>
+</head>
+
+<body>
+
+<?php
+
+$base_url = "../";
+include "../navbar.php";
+
+
         echo "<p>Errore: id_squadra non trovato </p>";
         echo "<h2><a href='crea_squadra.php'> Riprova </a></h2>";
 
